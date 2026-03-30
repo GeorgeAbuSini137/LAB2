@@ -11,6 +11,11 @@ import java.util.Scanner;
  */
 public class TestThreadCheckArray {
 	/**
+	 * Default constructor for TestThreadCheckArray.
+	 * Not needed explicitly unless you want custom behavior.
+	 */
+	public TestThreadCheckArray() {}
+	/**
 	 * Main method to run the multi-threaded test.
 	 *
 	 * @param args command line arguments (not used)
