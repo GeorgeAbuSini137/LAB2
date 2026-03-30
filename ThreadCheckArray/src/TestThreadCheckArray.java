@@ -3,18 +3,19 @@ import java.util.Scanner;
 /**
  * Test class for demonstrating multi-threaded processing using SharedData
  * and ThreadCheckArray.
- * 
+ *
  * <p>
  * The program asks the user to input an array of integers and a target number (b).
  * Then it creates two threads that try to process the array simultaneously 
- * (e.g., checking for a subset sum or some condition implemented in ThreadCheckArray).
- * After threads finish, it prints the solution if found.
+ * (subset sum check). After threads finish, it prints the solution if found.
  * </p>
  */
 public class TestThreadCheckArray {
 	/**
-     * Main method to run the multi-threaded test.
-     */
+	 * Main method to run the multi-threaded test.
+	 *
+	 * @param args command line arguments (not used)
+	 */
 	public static void main(String[] args) {
 		try (Scanner input = new Scanner(System.in)) {
 			Thread thread1, thread2;
