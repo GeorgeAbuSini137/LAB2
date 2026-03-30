@@ -1,13 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- * Test class for demonstrating multi-threaded processing using SharedData
+ * Test class for demonstrating multi-threaded processing with SharedData
  * and ThreadCheckArray.
  *
  * <p>
- * The program asks the user to input an array of integers and a target number (b).
- * Then it creates two threads that try to process the array simultaneously 
- * (subset sum check). After threads finish, it prints the solution if found.
+ * The program asks the user to input an array of integers and a target number (b),
+ * creates two threads to check subsets of the array, and prints the solution if found.
  * </p>
  */
 public class TestThreadCheckArray {
