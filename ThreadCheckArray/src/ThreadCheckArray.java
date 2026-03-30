@@ -1,5 +1,12 @@
 import java.util.ArrayList;
-
+/**
+ * Runnable class that checks for a solution in the array stored in SharedData.
+ * <p>
+ * This class is designed to be run in multiple threads. Each thread recursively
+ * checks subsets of the array to see if a subset sums to the target value (b).
+ * Once a solution is found, the shared flag is set and the winArray is updated.
+ * </p>
+ */
 public class ThreadCheckArray implements Runnable 
 {
 	private boolean flag;
@@ -7,7 +14,12 @@ public class ThreadCheckArray implements Runnable
 	SharedData sd;
 	ArrayList<Integer> array;
 	int b;
-	
+	/**
+     * Constructor for ThreadCheckArray.
+     * Copies the array and target value from SharedData while synchronizing access.
+     *
+     * @param sd the shared data object
+     */
 	public ThreadCheckArray(SharedData sd) 
 	{
 		this.sd = sd;	
@@ -18,7 +30,13 @@ public class ThreadCheckArray implements Runnable
 		}		
 		winArray = new boolean[array.size()];
 	}
-	
+	/**
+     * Recursive method to check subsets of the array for a sum equal to b.
+     * Updates the local winArray and the shared flag when a solution is found.
+     *
+     * @param n current size of the subarray to consider
+     * @param b remaining target sum to match
+     */
 	void rec(int n, int b)
 	{
 		synchronized (sd) 
@@ -51,7 +69,11 @@ public class ThreadCheckArray implements Runnable
 		}	
 		rec(n-1, b);
 	}
-
+	/**
+     * Main method executed by the thread.
+     * Determines which part of the array to check based on thread name
+     * and updates SharedData when a solution is found.
+     */
 	public void run() {
 		if (array.size() != 1)
 			if (Thread.currentThread().getName().equals("thread1"))
